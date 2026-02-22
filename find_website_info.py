@@ -1,20 +1,37 @@
 import requests 
 from bs4 import BeautifulSoup
 import re
+import sys
 
-try:
-
-    url1 = input("Enter the first url: ")
-    # url2 = input("Enter the second url: ")
-
-    rq = requests.get("https://sitare.org/",timeout=20)
-    # rq1 = requests.get(url2,timeout=20)
+headers = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                "AppleWebKit/537.36 (KHTML, like Gecko) "
+                "Chrome/122.0 Safari/537.36"
+    }
 
 
-    content = rq.text
-    soup = BeautifulSoup(content,'html.parser')
-    print((soup.get_text().split()))
-    words = soup.get_text()
+def main():
+    args = sys.argv
 
-finally:
-    print("end")
+    url = args[1]
+
+    try:
+        rq = requests.get(url,headers=headers,timeout=20)
+        soup = BeautifulSoup(rq.text,'html.parser')
+
+        urls = [link.get('href') for link in soup.find_all('a')]
+        
+        print("Title : " + soup.title.text if soup.title else "None" )
+        print("Body : " + soup.getText(strip=True) if soup.body else "None")
+
+        print()
+        print("Urls : ")
+        for url in urls:
+            print(f"    {url}")
+
+
+    finally:
+        print("end")
+
+
+main()
