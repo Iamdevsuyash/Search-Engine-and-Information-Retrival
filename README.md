@@ -7,8 +7,7 @@ Run
 python find_website_info.py https://en.wikipedia.org/wiki/Artificial_intelligence
 ```
 
-## Project2 - program to take two URLs from the web on the command line, print how
-many bits are common in their simhashes.
+## Project2 - program to take two URLs from the web on the command line, print how many bits are common in their simhashes.
 
 Run 
 ```
