@@ -13,10 +13,7 @@ headers = {
                 "Chrome/122.0 Safari/537.36"
     }
 
-
-# Get English stop words using language code
 # used from -  https://pypi.org/project/stop-words/
-
 stopwords = get_stop_words('en')
 
 print("Number of stopwords : " ,len(stopwords))
