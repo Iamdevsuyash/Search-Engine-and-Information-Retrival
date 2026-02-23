@@ -13,9 +13,8 @@ headers = {
 def main():
     args = sys.argv
 
-    url = args[1]
-
     try:
+        url = args[1]
         rq = requests.get(url,headers=headers,timeout=20)
         soup = BeautifulSoup(rq.text,'html.parser')
 
