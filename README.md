@@ -16,10 +16,12 @@ python near_duplicate_check.py https://en.wikipedia.org/wiki/Artificial_intellig
 ```
 
 ## Requirements
+Python 3.x 
 
-Python 3.x
 requests
+
 beautifulsoup4
+
 stop-words
 
 Install dependencies:
