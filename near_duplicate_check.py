@@ -19,7 +19,7 @@ headers = {
 
 stopwords = get_stop_words('en')
 
-print(len(stopwords))
+print("Number of stopwords : " ,len(stopwords))
 
 def hash_word(s):
     m = 2**64
@@ -95,7 +95,7 @@ def main():
                 comman_bits +=1
 
         print("Comman bits : ",comman_bits)
-        print("Similar" if comman_bits > 60 else "Not similar")
+        print("Websites are Similar" if comman_bits > 60 else "Not similar")
 
     except Exception as e:
         print(e)
