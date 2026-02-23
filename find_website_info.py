@@ -22,13 +22,16 @@ def main():
         urls = [link.get('href') for link in soup.find_all('a')]
         
         print("Title : " + soup.title.text if soup.title else "None" )
-        print("Body : " + soup.getText(strip=True) if soup.body else "None")
+        print("Body : " + soup.body.getText(strip=True) if soup.body else "None")
 
         print()
+
         print("Urls : ")
         for url in urls:
             print(f"    {url}")
 
+    except Exception as e:
+        print("Invalid Input")
 
     finally:
         print("end")
